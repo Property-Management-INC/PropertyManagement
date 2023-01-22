@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Management | Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-----
+    <div class="navBar">
+        <ul>
+            <li><a href="index.html">Property Management INC</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="listings.html">Listings</a></li>
+            <li><a href="login.html">Sign In</a></li>
+        </ul>
+    </div>--->
+
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Property Management INC</a>
+        <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="listings.html">Listings</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Advertise
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="newAdvertisement.html">Submit Advertisement</a></li>
+                <li><a class="dropdown-item" href="myAdvertisements.html">My Advertisements</a></li>
+              </ul>
+            </li>
+          </ul>
+
+
+          <div class="d-flex bg-dark">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item me-2">
+                <a class="nav-link rounded bg-white text-dark" href="login.html">Sign In</a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+      </div>
+  </nav>
+
+
+
+
+
+    <div id="imgCont">
+        <div id="imgContent">
+            <h1>Search for Houses</h1>
+            <h5 class="p-3">The house you want is out there and we'll help you find it</h5>
+            <form id="propertySearched">
+              <div class="row align-items-center justify-content-center">
+                <div class="col-8 p-0">
+                  <input class="form-control" list="propertyOptions" id="exampleDataList" placeholder="Type to search...">
+                  <datalist id="propertyOptions">
+                    <option value="San Francisco">
+                    <option value="New York">
+                    <option value="Seattle">
+                    <option value="Los Angeles">
+                    <option value="Chicago">
+                  </datalist>
+                </div>
+                <div class="col-1 ps-1">
+                  <button class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+                <!--<input type="text" placeholder="Enter address..."
+
+                <button>
+     
+                        Search
+                </button>--->
+         
+            </form>
+        </div>
+    </div>
+
+    <div class="mainContent">
+        <h1>How does this work?</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, esse delectus voluptas odit voluptates doloribus itaque reiciendis. Odio, perspiciatis? Dolor vero nisi eum consequuntur, asperiores itaque corrupti enim facere! Qui.
+        </p>
+
+        <div id="roleInfo">
+            <div class="card">
+                <h1>Homeseekers</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime similique itaque ex incidunt? Vel eveniet, qui, ut repellendus aliquid eligendi culpa officiis iste voluptatum, dignissimos consequatur possimus odit iusto exercitationem!</p>
+            </div>
+            <div class="card">
+                <h1>Landlords</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime similique itaque ex incidunt? Vel eveniet, qui, ut repellendus aliquid eligendi culpa officiis iste voluptatum, dignissimos consequatur possimus odit iusto exercitationem!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/currentDate.js" defer></script>
+
+    <div class="footer">
+            <h3>Property Management INC</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            &copy;<span id="cDate"></span>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,302 @@
+/*Element styles*/
+body, html {
+    height: 100%;
+    margin: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    color: #0067b8;
+    
+}
+
+a:hover {
+    color: #1b1b1b;
+}
+
+h5 {
+    font-size: 1em;
+    padding: 10;
+    line-height: 25px;
+    margin: 10;
+}
+
+p {
+    line-height: 25px;
+}
+
+/*Media queries*/
+@media screen and (max-width: 900px) {
+    #roleInfo {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    #infoContainer {
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+  
+
+
+
+}
+
+@media screen and (min-width: 768px) {
+    #infoContainer {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 20px;
+    }
+
+}
+
+@media screen and (min-width: 200px) {
+
+}
+
+
+/*Navigation*/
+/*
+.navBar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1b1b1b;
+    color: white;
+}
+
+.navBar li {
+    float: left;
+}
+
+.navBar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 30px 16px;
+    text-decoration: none;
+}
+*/
+
+/*Home Page*/
+#imgCont {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg");
+
+    height: 100%;
+    background-position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#imgCont h1 {
+    padding: 0px;
+    margin: 0px;
+    font-size: 3.5em;
+}
+
+#imgContent {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#propertySearched {
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    text-align: center;
+}
+/*
+#propertySearched input {
+    padding: 20px;
+    margin: 10px;
+    border-radius: 50px;
+    border: none;
+    
+}
+
+#propertySearched button {
+    background-color: #1b1b1b;
+    color: white;
+    text-decoration: none;
+    padding: 20px 30px;
+    border-radius: 25px;
+    border: none;
+}
+*/
+
+.mainContent {
+    /*margin: 20px 50px;*/
+    margin: 10px;
+    padding: 100px 10px;
+    text-align: center;
+}
+
+#roleInfo {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    padding: 100px 10px;
+    margin: 10px;
+}
+
+.card {
+    border-radius: 10px;
+    padding: 10px;
+    height: auto;
+    width: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+    color: black;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #1b1b1b;
+    color: white;
+}
+
+
+/*Listings Page*/
+#propertyContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.propertyListing {
+
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    gap: 30px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    width: 700px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.propertyListing img {
+    border-radius: 10px;
+}
+/*
+.propertyListing button {
+    border-radius: 10px;
+    border: none;
+    background-color: #1b1b1b;
+    color: white;
+    padding: 20px;
+}*/
+
+/*Sign-In Page*/
+.loginContainer {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 400px;
+    padding: 10px;
+    margin: 10px;
+    text-align: left;
+
+}
+/*
+#loginForm {
+    text-align: left;
+    
+}
+
+#loginForm input {
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+
+#loginButton {
+    background-color: #1b1b1b;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+}*/
+
+/*Property Info Page*/
+/*
+infoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}*/
+
+
+.infoCard {
+    /*border: 1px solid black;*/
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.infoCard img {
+    border-radius: 10px;
+
+}
+
+.propertyStats {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.propertyDescription {
+    padding: 10px;
+    text-align: left;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    padding: 10px;
+
+}
+
+.features p {
+    /*background-color: #F7E7CE;*/
+    border: 1px solid black;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    /*box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;*/
+}
+
+
+
+
+
+/*----------------------------*/
+
+.middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
