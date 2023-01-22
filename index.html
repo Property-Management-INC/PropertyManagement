@@ -10,16 +10,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<!-----
-    <div class="navBar">
-        <ul>
-            <li><a href="index.html">Property Management INC</a></li>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="listings.html">Listings</a></li>
-            <li><a href="login.html">Sign In</a></li>
-        </ul>
-    </div>--->
 
     <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
       <div class="container-fluid">
@@ -71,11 +61,11 @@
         <div id="imgContent">
             <h1>Search for Houses</h1>
             <h5 class="p-3">The house you want is out there and we'll help you find it</h5>
-            <form id="propertySearched">
+            <form action="">
               <div class="row align-items-center justify-content-center">
                 <div class="col-8 p-0">
-                  <input class="form-control" list="propertyOptions" id="exampleDataList" placeholder="Type to search...">
-                  <datalist id="propertyOptions">
+                  <input class="form-control" list="propertySuggestions" id="propertySearched" name="propertySearched" placeholder="Type to search...">
+                  <datalist id="propertySuggestions">
                     <option value="San Francisco">
                     <option value="New York">
                     <option value="Seattle">
@@ -84,20 +74,13 @@
                   </datalist>
                 </div>
                 <div class="col-1 ps-1">
-                  <button class="btn btn-primary">
+                  <button class="btn btn-primary" type="submit">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                       <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                     </svg>
                   </button>
                 </div>
               </div>
-
-                <!--<input type="text" placeholder="Enter address..."
-
-                <button>
-     
-                        Search
-                </button>--->
          
             </form>
         </div>

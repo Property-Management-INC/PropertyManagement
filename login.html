@@ -54,36 +54,27 @@
 </nav>
 
     <div class="mainContent middle">
-      <!----
-        <div class="loginContainer">
-            <h1>Sign In</h1>
-            <form id="loginForm">
-                <label>Username or Email Address</label><br>
-                <input type="text"><br>
-                <label>Password<label><br>
-                <input type="text"><br>
-                <a href="register.html">Create a new account</a><br>
-                <input id="loginButton" type="submit"> 
-            </form>
-        </div>--->
-        <div class="loginContainer">
+      <div class="loginContainer">
+        <form action="">
           <div class="mb-3">
             <h1>Sign in</h1>
           </div>
           <div class="mb-3">
             <label for="username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="username" placeholder="johnDoe2000">
+            <input type="text" class="form-control" id="username" name="username" placeholder="johnDoe2000">
           </div>
           <div class="mb-3">
             <label for="password" class="form-label">Password</label>
-            <input type="text" class="form-control" id="password" placeholder="*******">
+            <input type="text" class="form-control" id="password" name="password" placeholder="*******">
           </div>
           <div class="mb-3">
               <a link class="link-primary" href="register.html">Create new account</a>
           </div>
           <div class="mb-3">
-            <button class="btn btn-dark">Sign in</button>
+            <button class="btn btn-dark" type="submit">Sign in</button>
           </div>
+        </form>
+
       </div>
 
     </div>
