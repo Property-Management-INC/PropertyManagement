@@ -39,10 +39,6 @@ p {
         flex-direction: column;
     }
 
-  
-
-
-
 }
 
 @media screen and (min-width: 768px) {
@@ -57,31 +53,6 @@ p {
 @media screen and (min-width: 200px) {
 
 }
-
-
-/*Navigation*/
-/*
-.navBar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #1b1b1b;
-    color: white;
-}
-
-.navBar li {
-    float: left;
-}
-
-.navBar li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 30px 16px;
-    text-decoration: none;
-}
-*/
 
 /*Home Page*/
 #imgCont {
@@ -118,28 +89,10 @@ p {
     width:100%;
     text-align: center;
 }
-/*
-#propertySearched input {
-    padding: 20px;
-    margin: 10px;
-    border-radius: 50px;
-    border: none;
-    
-}
-
-#propertySearched button {
-    background-color: #1b1b1b;
-    color: white;
-    text-decoration: none;
-    padding: 20px 30px;
-    border-radius: 25px;
-    border: none;
-}
-*/
 
 .mainContent {
     /*margin: 20px 50px;*/
-    margin: 10px;
+    margin: 30px;
     padding: 100px 10px;
     text-align: center;
 }
@@ -151,101 +104,22 @@ p {
 
     padding: 100px 10px;
     margin: 10px;
+
+    justify-content: center;
+    align-items: center;
 }
 
 .card {
     border-radius: 10px;
     padding: 10px;
     height: auto;
-    width: auto;
+    width: 500px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: white;
     color: black;
 }
 
-.footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #1b1b1b;
-    color: white;
-}
-
-
-/*Listings Page*/
-#propertyContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.propertyListing {
-
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-    gap: 30px;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-    width: 700px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.propertyListing img {
-    border-radius: 10px;
-}
-/*
-.propertyListing button {
-    border-radius: 10px;
-    border: none;
-    background-color: #1b1b1b;
-    color: white;
-    padding: 20px;
-}*/
-
-/*Sign-In Page*/
-.loginContainer {
-    border: 1px solid black;
-    border-radius: 10px;
-    width: 400px;
-    padding: 10px;
-    margin: 10px;
-    text-align: left;
-
-}
-/*
-#loginForm {
-    text-align: left;
-    
-}
-
-#loginForm input {
-    border-radius: 10px;
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px;
-}
-
-#loginButton {
-    background-color: #1b1b1b;
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 25px;
-    border: none;
-}*/
-
 /*Property Info Page*/
-/*
-infoContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}*/
-
-
 .infoCard {
     /*border: 1px solid black;*/
     border-radius: 10px;
@@ -294,6 +168,13 @@ infoContainer {
 
 
 /*----------------------------*/
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #1b1b1b;
+    color: white;
+}
 
 .middle {
     display: flex;
