@@ -11,47 +11,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Property Management INC</a>
-        <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="listings.html">Listings</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Advertise
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="newAdvertisement.html">Submit Advertisement</a></li>
-                <li><a class="dropdown-item" href="myAdvertisements.html">My Advertisements</a></li>
-              </ul>
-            </li>
-          </ul>
-
-
-          <div class="d-flex bg-dark">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item me-2">
-                <a class="nav-link rounded bg-white text-dark" href="login.html">Sign In</a>
-              </li>
-            </ul>
-
-          </div>
-
-        </div>
-      </div>
-  </nav>
+  <?php include("includes/nav.php"); ?>
 
   <div id="imgContainer">
     <div id="imgContent">
@@ -83,7 +43,7 @@
             <div class="row text-center align-items-center justify-content-center">
               <div class="col-12 col-md-8 col-lg-3 pt-3 pb-3">
                 <label class="form-label" for="radius">Search radius</label>
-                <select class="form-select" id="radius" name="radius" aria-label="Default select example">
+                <select class="form-select" id="radius" name="radius">
                   <option selected>Any radius</option>
                   <option value="1">5 km</option>
                   <option value="2">10 km</option>
@@ -92,7 +52,7 @@
               </div>
               <div class="col-12 col-md-8 col-lg-3 pt-3 pb-3">
                 <label class="form-label" for="bedrooms">Bedrooms</label>
-                <select class="form-select" id="bedrooms" name="bedrooms" aria-label="Default select example">
+                <select class="form-select" id="bedrooms" name="bedrooms">
                   <option selected>All</option>
                   <option value="1">1+</option>
                   <option value="1">2+</option>
@@ -103,7 +63,7 @@
               </div>
               <div class="col-12 col-md-8 col-lg-3 pt-3 pb-3">
                 <label class="form-label" for="maxPrice">Max Price</label>
-                <select class="form-select" id="maxPrice" name="maxPrice" aria-label="Default select example">
+                <select class="form-select" id="maxPrice" name="maxPrice">
                   <option selected>No max</option>
                   <option value="1">500 pcm</option>
                   <option value="2">600 pcm</option>
@@ -112,11 +72,11 @@
               </div>
               <div class="col-12 col-md-8 col-lg-3 pt-3 pb-3">
                 <label class="form-label" for="propertyType">Property type</label>
-                <select class="form-select" id="propertyType" name="propertyType" aria-label="Default select example">
+                <select class="form-select" id="propertyType" name="propertyType">
                   <option selected>All types</option>
-                  <option value="1">Apartments</option>
-                  <option value="2">Houses</option>
-                  <option value="3">Flats</option>
+                  <option value="1">Single Family</option>
+                  <option value="2">Apartment</option>
+                  <option value="3">Duplex</option>
                 </select>
               </div>
             </div>
