@@ -1,4 +1,4 @@
-// Get current date and append to copyright span in footer
+// Get current date and append to footer
 
 window.onload = () => {
     let cDate = document.getElementById("cDate");

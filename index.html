@@ -53,56 +53,89 @@
       </div>
   </nav>
 
-
-
-
-
-    <div id="imgCont">
-        <div id="imgContent">
-            <h1>Search for Houses</h1>
-            <h5 class="p-3">The house you want is out there and we'll help you find it</h5>
-            <form action="">
-              <div class="row align-items-center justify-content-center">
-                <div class="col-8 p-0">
-                  <input class="form-control" list="propertySuggestions" id="propertySearched" name="propertySearched" placeholder="Type to search...">
-                  <datalist id="propertySuggestions">
-                    <option value="San Francisco">
-                    <option value="New York">
-                    <option value="Seattle">
-                    <option value="Los Angeles">
-                    <option value="Chicago">
-                  </datalist>
-                </div>
-                <div class="col-1 ps-1">
-                  <button class="btn btn-primary" type="submit">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                    </svg>
-                  </button>
-                </div>
+  <div id="imgContainer">
+    <div id="imgContent">
+          <h1>Search for Houses</h1>
+          <h5 class="p-3">The house you want is out there and we'll help you find it</h5>
+          <form class="bg-black p-5 rounded" action="">
+            <div class="row mb-5">
+              <div class="col">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Radius</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
               </div>
-         
-            </form>
-        </div>
-    </div>
-
-    <div class="mainContent">
-        <h1>How does this work?</h1>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, esse delectus voluptas odit voluptates doloribus itaque reiciendis. Odio, perspiciatis? Dolor vero nisi eum consequuntur, asperiores itaque corrupti enim facere! Qui.
-        </p>
-
-        <div id="roleInfo">
-            <div class="card">
-                <h1>Homeseekers</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime similique itaque ex incidunt? Vel eveniet, qui, ut repellendus aliquid eligendi culpa officiis iste voluptatum, dignissimos consequatur possimus odit iusto exercitationem!</p>
+              <div class="col">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Bedrooms</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="col">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Max price</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="col">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Property type</option>
+                  <option value="1">Show all</option>
+                  <option value="2">Houses</option>
+                  <option value="3">Flats</option>
+                </select>
+              </div>
             </div>
-            <div class="card">
-                <h1>Landlords</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime similique itaque ex incidunt? Vel eveniet, qui, ut repellendus aliquid eligendi culpa officiis iste voluptatum, dignissimos consequatur possimus odit iusto exercitationem!</p>
+
+
+
+            <div class="row align-items-center justify-content-center">
+              <div class="col-4 pe-0">
+                <input class="form-control" list="propertySuggestions" id="propertySearched" name="propertySearched" placeholder="Type to search...">
+                <datalist id="propertySuggestions">
+                  <option value="San Francisco">
+                  <option value="New York">
+                  <option value="Seattle">
+                  <option value="Los Angeles">
+                  <option value="Chicago">
+                </datalist>
+              </div>
+              <div class="col-1 ps-2 text-start">
+                <button class="btn btn-primary" type="submit">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                  </svg>
+                </button>
+              </div>
             </div>
-        </div>
-    </div>
+        
+          </form>
+      </div>
+  </div>
+
+  <div class="mainContent">
+      <h1>How does this work?</h1>
+      <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, esse delectus voluptas odit voluptates doloribus itaque reiciendis. Odio, perspiciatis? Dolor vero nisi eum consequuntur, asperiores itaque corrupti enim facere! Qui.
+      </p>
+
+      <div id="roleInfo">
+          <div class="card">
+              <h1>Homeseekers</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime similique itaque ex incidunt? Vel eveniet, qui, ut repellendus aliquid eligendi culpa officiis iste voluptatum, dignissimos consequatur possimus odit iusto exercitationem!</p>
+          </div>
+          <div class="card">
+              <h1>Landlords</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime similique itaque ex incidunt? Vel eveniet, qui, ut repellendus aliquid eligendi culpa officiis iste voluptatum, dignissimos consequatur possimus odit iusto exercitationem!</p>
+          </div>
+      </div>
+  </div>
 
     <script src="js/currentDate.js" defer></script>
 
