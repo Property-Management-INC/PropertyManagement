@@ -90,7 +90,7 @@
     </div>
     <div class="infoCard">
       <h1>Request Information</h1>
-      <form action="">
+      <form action="feedBackMessages/submit.php">
         <div class="mb-3">
           <label for="fName" class="form-label">First Name</label>
           <input type="text" class="form-control" id="fName" name="fName" placeholder="John">

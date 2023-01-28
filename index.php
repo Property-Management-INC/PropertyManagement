@@ -6,7 +6,7 @@
   <div id="imgContent">
         <h1 class="fw-bold">Search for Houses</h1>
         <h5 class="p-3">The house you want is out there and we'll help you find it</h5>
-        <form class="bg-black p-2 rounded" action="">
+        <form class="bg-black p-2 rounded" action="listings.php">
           <div class="row align-items-center justify-content-center pb-5">
             <div class="col-12 col-md-8 col-lg-6">
               <input class="form-control p-3" list="propertySuggestions" id="propertySearched" name="propertySearched" placeholder="Type to search...">
@@ -19,7 +19,7 @@
               </datalist>
             </div>
             <div class="col-12 col-md-8 col-lg-1 pt-3 pb-3">
-              <button class="btn btn-outline-light p-3" type="submit">
+              <button class="btn btn-outline-light pt-3 pb-3" type="submit">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                 </svg>

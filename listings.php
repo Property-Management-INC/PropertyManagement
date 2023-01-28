@@ -2,6 +2,11 @@
 <?php include("includes/header.php"); ?>
 <?php include("includes/nav.php"); ?>
 
+<?php
+// Get form data from user search
+
+?>
+
 <div class="container p-5">
   <div class="d-flex align-items-center justify-content-center">
     <div class="m-2 p-3 border rounded w-75">
