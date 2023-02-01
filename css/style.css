@@ -86,7 +86,7 @@ body, html {
     justify-content: center;
     align-items: center;
 }
-
+/*
 .card {
     border-radius: 10px;
     padding: 10px;
@@ -95,14 +95,21 @@ body, html {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: white;
     color: black;
-}
+}*/
+
 
 /*Property Info Page*/
+/*
 .infoCard {
-    /*border: 1px solid black;*/
+    /*border: 1px solid black;
     border-radius: 10px;
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+    display: flex;
+    flex-direction: column;
+    background-color: pink;
 }
 
 .infoCard img {
@@ -133,13 +140,13 @@ body, html {
 }
 
 .features p {
-    /*background-color: #F7E7CE;*/
+    /*background-color: #F7E7CE;
     border: 1px solid black;
     color: black;
     padding: 10px;
     border-radius: 10px;
-    /*box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;*/
-}
+    /*box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}*/
 
 
 
