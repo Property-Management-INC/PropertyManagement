@@ -1,6 +1,6 @@
-<?php include("includes/config.php");?>
-<?php include("includes/header.php"); ?>
-<?php include("includes/nav.php"); ?>
+<?php include("../includes/config.php");?>
+<?php include("../includes/header.php"); ?>
+<?php include("../includes/nav.php"); ?>
 
 <div class="mainContent">
   <h1>Advertisement Requests</h1>
@@ -102,4 +102,4 @@
   </div>
 </div>
 
-<?php include("includes/footer.php"); ?>
+<?php include("../includes/footer.php"); ?>
