@@ -16,8 +16,8 @@
     <h5 class="border p-2">Square Feet: 2,500</h5>
     <div class="border p-2">
         <h5>Property Images:</h5>
-        <img src="images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
-        <img src="images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
+        <img src="../images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
+        <img src="../images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
         <img src="images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
         <img src="images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
         <img src="images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
@@ -27,7 +27,7 @@
       </div>
     <div class="border p-2 mt-2">
         <h5>Proof of Ownership:</h5>
-        <object data="images/ownership123.pdf" type="application/pdf" width="100%" height="800px"></object>
+        <object data="../images/ownership123.pdf" type="application/pdf" width="100%" height="800px"></object>
     </div>
     <div class="border p-2 mt-2">
       <form action="">
@@ -75,7 +75,7 @@
     </div>
     <div class="border p-2 mt-2">
         <h5>Proof of Ownership:</h5>
-        <object data="images/ownership123.pdf" type="application/pdf" width="100%" height="800px"></object>
+        <object data="../images/ownership123.pdf" type="application/pdf" width="100%" height="800px"></object>
     </div>
     <div class="border p-2 mt-2">
       <form action="">

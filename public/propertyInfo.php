@@ -172,10 +172,7 @@
           <h5>5</h5>
           <h5>Acres</h5>
         </div>
-        <div class="col-12 col-md-12 col-lg-3 p-2">
-          <h5>14</h5>
-          <h5>Days Listed</h5>
-        </div>
+
 
       </div>
 
