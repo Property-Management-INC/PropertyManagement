@@ -3,7 +3,7 @@
 <?php include("includes/nav.php"); ?>
 
 <div class="container middle pt-5 pb-5">
-  <form class="border p-3 w-75 rounded" action="">
+  <form class="border p-3 w-75 rounded" action="index.php">
     <div class="mb-3">
       <h1>Create account</h1>
     </div>

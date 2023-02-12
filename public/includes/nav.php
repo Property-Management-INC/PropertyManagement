@@ -10,9 +10,6 @@
           <a <?php if ($CURRENT_PAGE == "Index") {?>class="nav-link active" aria-current="page"<?php }?> class="nav-link" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item">
           <a <?php if ($CURRENT_PAGE == "Listings") {?>class="nav-link active"<?php }?> class="nav-link" href="listings.php">Listings</a>
         </li>
         <li class="nav-item dropdown">

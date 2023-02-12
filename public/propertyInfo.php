@@ -266,7 +266,7 @@
 
     <div class="col-12 col-md-12 col-lg-11 card m-2 p-3">
       <h1>Request Information</h1>
-      <form action="feedBackMessages/submit.php">
+      <form action="submit.php">
         <div class="mb-3">
           <label for="fName" class="form-label">First Name</label>
           <input type="text" class="form-control" id="fName" name="fName" placeholder="John">

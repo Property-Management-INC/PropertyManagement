@@ -5,7 +5,7 @@
 <div class="mainContent">
   <div class="d-flex align-items-center justify-content-center">
 
-    <form class="row g-3 border w-50 text-start p-3 rounded mt-2" action="">
+    <form class="row g-3 border w-50 text-start p-3 rounded mt-2" action="submit.php">
       <div class="text-center border-bottom">
         <h1>Advertise Your Property</h1>
         <p>Advertisements are processed within 48 hours.</p>
