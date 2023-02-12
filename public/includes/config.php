@@ -38,6 +38,10 @@
 			$CURRENT_PAGE = "Info";
 			$PAGE_TITLE = "Property Management | Info";
 			break;
+		case "submit.php":
+			$CURRENT_PAGE = "Submit";
+			$PAGE_TITLE = "Property Management | Form";
+			break;
 		default:
 			$CURRENT_PAGE = "Index";
 			$PAGE_TITLE = "Property Management | Home";
