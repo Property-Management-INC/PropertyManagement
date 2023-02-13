@@ -4,6 +4,18 @@
 
 <?php
   include("includes/connect.php");
+/*
+  $sql = "INSERT INTO [USER].[USER] (POSTCODE, USERNAME_TXT, FIRST_NAME_TXT, LAST_NAME_TXT, STREET_ADDRESS_TXT, CITY, STATE, PASSWORD, EMAIL_ADDRESS_TXT, IS_ADMIN, IS_ACTIVE)
+  VALUES (12345, 'USER:)}', 'BOB2', 'TOM2', '2398 RANDOM RD', 'NY', 'NY', 'PWD1', 'TOMBOB@GMAIL.COM', 0, 1)";
+
+  $stmt = sqlsrv_prepare($conn, $sql);
+
+  if (sqlsrv_execute($stmt) === false) {
+    echo "failed";
+  } else {
+    echo "new record created";
+  }
+*/
 ?>
 
 <div id="imgContainer">
