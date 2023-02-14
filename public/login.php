@@ -3,7 +3,7 @@
 <?php include("includes/nav.php"); ?>
 
 <div class="container middle pt-5 pb-5">
-  <form class="border p-3 w-75 rounded" action="index.php">
+  <form class="border p-3 w-75 rounded" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
     <div class="mb-3">
       <h1>Sign in</h1>
     </div>
@@ -23,5 +23,23 @@
     </div>
   </form>
 </div>
+
+<?php
+// Login user, select user account
+echo print_r($_POST,true);
+// Get data
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+
+  //echo "</br>";
+  //echo $username;
+  //echo "</br>";
+  //echo $password;
+  //echo "</br>";
+  //echo $email;
+}
+
+?>
 
 <?php include("includes/footer.php"); ?>
