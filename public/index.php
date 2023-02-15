@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <?php include("includes/config.php");?>
 <?php include("includes/header.php"); ?>
 <?php include("includes/nav.php"); ?>
@@ -104,8 +109,6 @@
       </div>
   </div>
 </div>
-
-<a href="logout.php"><h2>Logout</h2></a>
 
 <?php include("includes/footer.php"); ?>
     
