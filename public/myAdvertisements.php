@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(!isset($_SESSION["login"])) {
+  echo "not logged in";
+  header("location:login.php");
+}
+  
+?>
+
+
+
 <?php include("includes/config.php");?>
 <?php include("includes/header.php"); ?>
 <?php include("includes/nav.php"); ?>

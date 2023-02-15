@@ -3,7 +3,7 @@
 <?php include("includes/nav.php"); ?>
 
 <div class="container middle pt-5 pb-5">
-  <form class="border p-3 w-75 rounded" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+  <form class="border p-3 w-75 rounded" method="post" action="../sql/selectUser.php">
     <div class="mb-3">
       <h1>Sign in</h1>
     </div>

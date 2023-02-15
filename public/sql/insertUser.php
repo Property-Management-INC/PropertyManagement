@@ -34,4 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
 }
 
+// automatically log user in after creating new account
+
 ?>
