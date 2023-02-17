@@ -1,4 +1,5 @@
 <?php
+	// Lines 0 - 50 written by William Hilton
 	$path = $_SERVER["SCRIPT_NAME"]; 
 	$page=basename($path);
 	switch($page) {

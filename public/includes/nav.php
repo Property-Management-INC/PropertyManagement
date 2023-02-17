@@ -1,4 +1,5 @@
 <?php
+/// Lines 0 - 87 written by William Hilton
 if (!isset($_SESSION["login"])) { ?>
   <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
   <div class="container-fluid">
@@ -83,5 +84,4 @@ if (!isset($_SESSION["login"])) { ?>
   </div>
 </nav>
 
-<?php } ?>
-    
+<?php } ?> 

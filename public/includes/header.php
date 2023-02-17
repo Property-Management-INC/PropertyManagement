@@ -1,3 +1,7 @@
+<?php
+/// Lines 0 - 24 written by William Hilton
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

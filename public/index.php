@@ -1,14 +1,15 @@
 <?php
+// Lines 0 - 115 written by William Hilton
 session_start();
+
+include("includes/config.php");
+include("includes/header.php");
+include("includes/nav.php");
+
+include("includes/connect.php");
 ?>
 
-
-<?php include("includes/config.php");?>
-<?php include("includes/header.php"); ?>
-<?php include("includes/nav.php"); ?>
-
 <?php
-  include("includes/connect.php");
 
 /*
   $sql = "INSERT INTO [USER].[USER] (POSTCODE, USERNAME_TXT, FIRST_NAME_TXT, LAST_NAME_TXT, STREET_ADDRESS_TXT, CITY, STATE, PASSWORD, EMAIL_ADDRESS_TXT, IS_ADMIN, IS_ACTIVE)

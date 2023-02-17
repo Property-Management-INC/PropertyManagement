@@ -1,4 +1,5 @@
 <?php
+// Lines 0 - 74 written by William Hilton
 session_start();
 ?>
 

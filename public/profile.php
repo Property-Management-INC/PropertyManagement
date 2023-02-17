@@ -1,3 +1,7 @@
+<?php
+// Lines 0 - 21 written by William Hilton
+?>
+
 <?php include("includes/config.php");?>
 <?php include("includes/header.php"); ?>
 <?php include("includes/nav.php"); ?>

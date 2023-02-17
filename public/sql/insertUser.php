@@ -1,4 +1,6 @@
 <?php
+// Lines 0 - 41 written by William Hilton
+
 // Insert new user account
 include("../includes/connect.php");
 echo print_r($_POST,true);

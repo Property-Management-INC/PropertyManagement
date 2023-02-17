@@ -1,4 +1,5 @@
 <?php
+// Lines 0 - 215 written by William Hilton
 
 session_start();
 if(!isset($_SESSION["login"])) {

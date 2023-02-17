@@ -1,3 +1,5 @@
+/* Lines 0-105 written by William Hilton */
+
 /*Element styles*/
 body, html {
     height: 100%;
@@ -86,71 +88,6 @@ body, html {
     justify-content: center;
     align-items: center;
 }
-/*
-.card {
-    border-radius: 10px;
-    padding: 10px;
-    height: auto;
-    width: 500px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: white;
-    color: black;
-}*/
-
-
-/*Property Info Page*/
-/*
-.infoCard {
-    /*border: 1px solid black;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-
-    display: flex;
-    flex-direction: column;
-    background-color: pink;
-}
-
-.infoCard img {
-    border-radius: 10px;
-
-}
-
-.propertyStats {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-
-.propertyDescription {
-    padding: 10px;
-    text-align: left;
-}
-
-.features {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 20px;
-    padding: 10px;
-
-}
-
-.features p {
-    /*background-color: #F7E7CE;
-    border: 1px solid black;
-    color: black;
-    padding: 10px;
-    border-radius: 10px;
-    /*box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}*/
-
-
-
-
 
 /*Components*/
 

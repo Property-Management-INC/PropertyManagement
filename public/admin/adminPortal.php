@@ -1,6 +1,9 @@
-<?php include("../includes/config.php");?>
-<?php include("../includes/header.php"); ?>
-<?php include("../includes/nav.php"); ?>
+<?php
+// Lines 0-108 written by William Hilton
+include("../includes/config.php");
+include("../includes/header.php");
+include("../includes/nav.php");
+?>
 
 <div class="mainContent">
   <h1>Advertisement Requests</h1>
