@@ -1,5 +1,8 @@
 <?php
 /// Lines 0 - 87 written by William Hilton
+// The nav file displays the navigation bar of the website
+
+// Check to see if the user session is active
 if (!isset($_SESSION["login"])) { ?>
   <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
   <div class="container-fluid">
@@ -42,6 +45,7 @@ if (!isset($_SESSION["login"])) { ?>
   </div>
 </nav>
 
+<!--If the user session is not active update nav view-->
 <?php } else { ?>
   <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
   <div class="container-fluid">

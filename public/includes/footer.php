@@ -1,5 +1,6 @@
 <?php
-/// Lines 0 - 12 written by William Hilton
+// Lines 0 - 12 written by William Hilton
+// The footer file contains the title of the website and relevent information that will be included on each page. 
 ?>
 
 <div class="footer">

@@ -1,5 +1,7 @@
 <?php
 // Lines 0-108 written by William Hilton
+// The admin portal enables the system administrator to view, approve, and reject advertisement requests from sellers.
+
 include("../includes/config.php");
 include("../includes/header.php");
 include("../includes/nav.php");

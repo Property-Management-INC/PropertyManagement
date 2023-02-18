@@ -1,5 +1,7 @@
 <?php
 // Lines 0 - 65 written by William Hilton
+// The myAdvertisements file displays a seller's advertisements that are currently available on the site.
+// The user must be logged in to view their advertisements and they may extend the lifetime of the post after paying a fee.
 
 session_start();
 if(!isset($_SESSION["login"])) {

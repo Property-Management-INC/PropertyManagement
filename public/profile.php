@@ -1,5 +1,6 @@
 <?php
 // Lines 0 - 21 written by William Hilton
+// The profile page displays a user's profile and associated account information.
 ?>
 
 <?php include("includes/config.php");?>

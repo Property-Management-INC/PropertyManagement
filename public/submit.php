@@ -1,5 +1,6 @@
 <?php
 // Lines 0 - 14 written by William Hilton
+// The submit file is a feedback message that will be displayed to the user after submitting a form.
 ?>
 
 <?php include("includes/config.php");?>

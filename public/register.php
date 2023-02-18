@@ -1,5 +1,6 @@
 <?php
 // Lines 0 - 37 written by William Hilton
+// The register file enables a user to create a new user account which is inserted into the database.
 ?>
 
 <?php include("includes/config.php");?>
@@ -31,7 +32,5 @@
     </div>
   </form>
 </div>
-
-
 
 <?php include("includes/footer.php"); ?>

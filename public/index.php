@@ -1,5 +1,7 @@
 <?php
 // Lines 0 - 115 written by William Hilton
+// The index page displays the search bar, listing filters, and information about the services offered by the website.
+
 session_start();
 
 include("includes/config.php");
@@ -7,22 +9,6 @@ include("includes/header.php");
 include("includes/nav.php");
 
 include("includes/connect.php");
-?>
-
-<?php
-
-/*
-  $sql = "INSERT INTO [USER].[USER] (POSTCODE, USERNAME_TXT, FIRST_NAME_TXT, LAST_NAME_TXT, STREET_ADDRESS_TXT, CITY, STATE, PASSWORD, EMAIL_ADDRESS_TXT, IS_ADMIN, IS_ACTIVE)
-  VALUES (12345, 'USER:)}', 'BOB2', 'TOM2', '2398 RANDOM RD', 'NY', 'NY', 'PWD1', 'TOMBOB@GMAIL.COM', 0, 1)";
-
-  $stmt = sqlsrv_prepare($conn, $sql);
-
-  if (sqlsrv_execute($stmt) === false) {
-    echo "failed";
-  } else {
-    echo "new record created";
-  }
-*/
 ?>
 
 <div id="imgContainer">

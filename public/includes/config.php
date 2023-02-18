@@ -1,5 +1,7 @@
 <?php
 	// Lines 0 - 50 written by William Hilton
+	// The config file configures the title and current page once a nav-bar link is clicked.
+
 	$path = $_SERVER["SCRIPT_NAME"]; 
 	$page=basename($path);
 	switch($page) {

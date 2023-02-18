@@ -1,5 +1,7 @@
 <?php
 // Lines 0 - 191 written by William Hilton
+// The propertyInfo file displays specific information about a property including filters, images, and a description of the property.
+// Buyers and renters may request additional information about a property using the Request Information form.
 
 session_start();
 ?>

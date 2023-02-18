@@ -1,5 +1,6 @@
 <?php
 // Lines 0 - 72 written by William Hilton
+// The login page allows the user to log into a valid user account that is stored in the database.
 ?>
 
 <?php include("includes/config.php");?>
