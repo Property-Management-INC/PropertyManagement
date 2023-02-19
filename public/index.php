@@ -1,5 +1,5 @@
 <?php
-// Lines 0 - 115 written by William Hilton
+// Lines 0 - 100 written by William Hilton
 // The index page displays the search bar, listing filters, and information about the services offered by the website.
 
 session_start();

@@ -1,5 +1,5 @@
 <?php
-// Lines 0 - 37 written by William Hilton
+// Lines 0 - 36 written by William Hilton
 // The register file enables a user to create a new user account which is inserted into the database.
 ?>
 

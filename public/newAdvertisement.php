@@ -1,5 +1,5 @@
 <?php
-// Lines 0 - 215 written by William Hilton
+// Lines 0 - 217 written by William Hilton
 // The newAdvertisement file allows sellers to submit an advertisement to the system administrator.
 // The user must be logged in to submit an advertisement request.
 

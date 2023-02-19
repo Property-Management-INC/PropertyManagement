@@ -1,5 +1,5 @@
 <?php
-// Lines 0 - 14 written by William Hilton
+// Lines 0 - 15 written by William Hilton
 // The submit file is a feedback message that will be displayed to the user after submitting a form.
 ?>
 

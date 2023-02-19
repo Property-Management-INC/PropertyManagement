@@ -1,5 +1,5 @@
 <?php
-/// Lines 0 - 24 written by William Hilton
+/// Lines 0 - 27 written by William Hilton
 // The header file displays the page title and links to the website's stylesheet
 ?>
 

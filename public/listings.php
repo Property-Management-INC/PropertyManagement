@@ -1,5 +1,5 @@
 <?php
-// Lines 0 - 74 written by William Hilton
+// Lines 0 - 76 written by William Hilton
 // The listings page displays a condensed view of properties that are available to rent or buy.
 
 session_start();

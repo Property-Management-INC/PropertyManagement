@@ -1,5 +1,5 @@
 <?php
-// Lines 0 - 21 written by William Hilton
+// Lines 0 - 22 written by William Hilton
 // The profile page displays a user's profile and associated account information.
 ?>
 

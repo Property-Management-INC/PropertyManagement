@@ -1,5 +1,5 @@
 <?php
-// Lines 0 - 41 written by William Hilton
+// Lines 0 - 42 written by William Hilton
 // The insertUser file inserts a new user account into the database with a secure password hash
 
 // Insert new user account

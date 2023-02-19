@@ -1,5 +1,5 @@
 <?php
-/// Lines 0 - 87 written by William Hilton
+/// Lines 0 - 91 written by William Hilton
 // The nav file displays the navigation bar of the website
 
 // Check to see if the user session is active
