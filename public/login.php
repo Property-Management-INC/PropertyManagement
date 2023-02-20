@@ -18,7 +18,7 @@
     </div>
     <div class="mb-3">
       <label for="password" class="form-label">Password</label>
-      <input type="text" class="form-control" id="password" name="password" placeholder="*******">
+      <input type="password" class="form-control" id="password" name="password" placeholder="*******">
     </div>
     <div class="mb-3">
       <label class="msg"></label></br>
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       } else { ?>
         <script src="js/alerts.js"></script>
         <?php
-        echo "Invalid username or password";
+        //echo "Invalid username or password";
 
       }
   }
