@@ -13,8 +13,12 @@
     <!--Config page title-->
     <title><?php print $PAGE_TITLE;?></title>
     <?php if ($CURRENT_PAGE == "Index") { ?>
-	<meta name="description" content="" />
-	<meta name="keywords" content="" /> 
+
+    <!--Description of website-->
+	<meta name="description" content="Property Management Website" />
+
+    <!--Keywords for search optimization-->
+	<meta name="keywords" content="Sell, Buy, Rent, Property, Management" /> 
     <?php } ?>
 
     <!--Stylesheet links-->
