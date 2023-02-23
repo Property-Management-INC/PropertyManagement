@@ -5,13 +5,57 @@
 session_start();
 ?>
 
-
 <?php include("includes/config.php"); ?>
 <?php include("includes/header.php"); ?>
 <?php include("includes/nav.php"); ?>
 
 <?php
-// Get form data from user search
+// Get user input from search bar on form submit (button click)
+// Query database for corresponding city, address, region etc. as required
+// Apply property filters to query
+// Return query results on listing page
+
+include("includes/connect.php");
+
+//echo print_r($_POST,true);
+
+// Get data
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Get user input
+  $propertySearched = $_POST['propertySearched'];
+
+  echo "User input: " . $propertySearched;
+
+  // Select property from database
+  // add params
+  $sql = "SELECT * FROM [ADVERTISEMENT].[ADVERTISEMENT] WHERE ADDRESS_CITY = '$propertySearched'";
+
+  $stmt = sqlsrv_prepare($conn, $sql);
+
+  if (sqlsrv_execute($stmt) === false) {
+    echo "</br> error";
+  } else {
+    echo "</br> success </br>";
+
+    $count = 0;
+    
+    // Return results
+    while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+      echo $row['ADDRESS_CITY'] . ' ' . $row['ADDRESS_STREET'] . '</br>';
+      $count += 1;
+
+    }
+
+    // If no result alert user
+    if ($row < 1 && $count === 0) {
+      echo "No results were found. Please expand your search parameters.";
+    }
+
+  }
+
+  
+
+}
 
 ?>
 
