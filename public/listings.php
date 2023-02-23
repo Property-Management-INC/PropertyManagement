@@ -28,7 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Select property from database
   // add zip code and address support
-  // add params
+  // add filters
+  // don't search if userInput empty
   $sql = "SELECT * FROM [ADVERTISEMENT].[ADVERTISEMENT] WHERE ADDRESS_CITY LIKE '%$propertySearched%'";
 
   $stmt = sqlsrv_prepare($conn, $sql);
