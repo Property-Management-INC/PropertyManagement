@@ -17,8 +17,6 @@ session_start();
 
 include("includes/connect.php");
 
-//echo print_r($_POST,true);
-
 // Get data
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Get user input
@@ -33,9 +31,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   echo "User input: " . $propertySearched;
 
   // apply radius filter using Google Maps API
+  // LIMIT
 
-  // add ADVERTISEMENT_TYPE
-  $sql = "SELECT * FROM [ADVERTISEMENT].[ADVERTISEMENT] WHERE ADDRESS_CITY LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice'";
+  // Apply all or specific filter to property type
+  if ($propertyType == "all") {
+    $sql = "SELECT ADDRESS_CITY, ADDRESS_STREET, PROPERTY_TYPE_NAME
+    FROM [ADVERTISEMENT].[ADVERTISEMENT] AS adv
+    INNER JOIN [ADVERTISEMENT].[PROPERTY_TYPE] AS prop ON adv.PROPERTY_TYPE_ID = prop.PROPERTY_TYPE_ID
+    WHERE ADDRESS_CITY LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice'";
+  } else {
+    $sql = "SELECT ADDRESS_CITY, ADDRESS_STREET, PROPERTY_TYPE_NAME
+    FROM [ADVERTISEMENT].[ADVERTISEMENT] AS adv
+    INNER JOIN [ADVERTISEMENT].[PROPERTY_TYPE] AS prop ON adv.PROPERTY_TYPE_ID = prop.PROPERTY_TYPE_ID
+    WHERE ADDRESS_CITY LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice' AND PROPERTY_TYPE_NAME = '$propertyType'";
+  }
 
   $stmt = sqlsrv_prepare($conn, $sql);
 
