@@ -24,11 +24,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Get user input
   $propertySearched = $_POST['propertySearched'];
 
+  // Filters
+  $radius = $_POST['radius'];
+  $bedrooms = $_POST['bedrooms'];
+  $maxPrice = $_POST['maxPrice'];
+  $propertyType = $_POST['propertyType'];
+
   echo "User input: " . $propertySearched;
 
-  // Select property from database
-  // add params
-  $sql = "SELECT * FROM [ADVERTISEMENT].[ADVERTISEMENT] WHERE ADDRESS_CITY = '$propertySearched'";
+  // apply radius filter using Google Maps API
+
+  // add ADVERTISEMENT_TYPE
+  $sql = "SELECT * FROM [ADVERTISEMENT].[ADVERTISEMENT] WHERE ADDRESS_CITY LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice'";
 
   $stmt = sqlsrv_prepare($conn, $sql);
 

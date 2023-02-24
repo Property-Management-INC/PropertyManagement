@@ -41,39 +41,39 @@ include("includes/nav.php");
         <div class="col-12 col-md-8 col-lg-3 pt-3 pb-3">
           <label class="form-label" for="radius">Search radius</label>
           <select class="form-select" id="radius" name="radius">
-            <option selected>Any radius</option>
-            <option value="1">5 km</option>
-            <option value="2">10 km</option>
-            <option value="3">25 km</option>
+            <option value="0" selected>Any radius</option>
+            <option value="5">5 km</option>
+            <option value="10">10 km</option>
+            <option value="25">25 km</option>
           </select>
         </div>
         <div class="col-12 col-md-8 col-lg-3 pt-3 pb-3">
           <label class="form-label" for="bedrooms">Bedrooms</label>
           <select class="form-select" id="bedrooms" name="bedrooms">
-            <option selected>All</option>
+            <option value="0" selected>All</option>
             <option value="1">1+</option>
-            <option value="1">2+</option>
-            <option value="2">3+</option>
-            <option value="3">4+</option>
-            <option value="3">5+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+            <option value="5">5+</option>
           </select>
         </div>
         <div class="col-12 col-md-8 col-lg-3 pt-3 pb-3">
           <label class="form-label" for="maxPrice">Max Price</label>
           <select class="form-select" id="maxPrice" name="maxPrice">
-            <option selected>No max</option>
-            <option value="1">500 pcm</option>
-            <option value="2">600 pcm</option>
-            <option value="3">700 pcm</option>
+            <option value="10000000" selected>No max</option>
+            <option value="500">500 pcm</option>
+            <option value="600">600 pcm</option>
+            <option value="700">700 pcm</option>
           </select>
         </div>
         <div class="col-12 col-md-8 col-lg-3 pt-3 pb-3">
           <label class="form-label" for="propertyType">Property type</label>
           <select class="form-select" id="propertyType" name="propertyType">
             <option selected>All types</option>
-            <option value="1">Single Family</option>
-            <option value="2">Apartment</option>
-            <option value="3">Duplex</option>
+            <option value="Single">Single Family</option>
+            <option value="Apartment">Apartment</option>
+            <option value="Duplex">Duplex</option>
           </select>
         </div>
       </div>
