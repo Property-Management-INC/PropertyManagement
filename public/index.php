@@ -70,7 +70,7 @@ include("includes/nav.php");
         <div class="col-12 col-md-8 col-lg-3 pt-3 pb-3">
           <label class="form-label" for="propertyType">Property type</label>
           <select class="form-select" id="propertyType" name="propertyType">
-            <option selected>All types</option>
+            <option value="all" selected>All types</option>
             <option value="Single">Single Family</option>
             <option value="Apartment">Apartment</option>
             <option value="Duplex">Duplex</option>
