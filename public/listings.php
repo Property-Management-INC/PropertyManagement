@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "</br> success </br>";
 
     $count = 0;
-    
+
     // Return results
     while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
       echo $row['ADDRESS_CITY'] . ' ' . $row['ADDRESS_STREET'] . '</br>';
