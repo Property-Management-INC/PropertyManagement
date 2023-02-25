@@ -28,23 +28,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $maxPrice = $_POST['maxPrice'];
   $propertyType = $_POST['propertyType'];
 
-  echo "User input: " . $propertySearched;
+  //echo "User input: " . $propertySearched;
 
   // apply radius filter using Google Maps API
   // LIMIT
-  // add zip code/region
 
   // Apply all or specific filter to property type
   if ($propertyType == "all") {
-    $sql = "SELECT ADDRESS_CITY, ADDRESS_STREET, PROPERTY_TYPE_NAME, ADVERTISEMENT_PRICE, NUMBER_OF_BEDROOMS, NUMBER_OF_BATHROOMS, SQR_FEET, ADDRESS_NUMBER, ADDRESS_STREET, ADDRESS_CITY, ADDRESS_STATE
+    $sql = "SELECT IMAGE_BINARY, ADDRESS_POSTCODE, ADDRESS_CITY, ADDRESS_STATE, ADDRESS_STREET, PROPERTY_TYPE_NAME, ADVERTISEMENT_PRICE, NUMBER_OF_BEDROOMS, NUMBER_OF_BATHROOMS, SQR_FEET, ADDRESS_NUMBER, ADDRESS_STREET, ADDRESS_CITY, ADDRESS_STATE
     FROM [ADVERTISEMENT].[ADVERTISEMENT] AS adv
     INNER JOIN [ADVERTISEMENT].[PROPERTY_TYPE] AS prop ON adv.PROPERTY_TYPE_ID = prop.PROPERTY_TYPE_ID
-    WHERE ADDRESS_CITY LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice'";
+
+    ---PROPERTY IMAGE
+    INNER JOIN [ADVERTISEMENT].[ADVERTISEMENT_IMAGE] AS img ON adv.ADVERTISEMENT_ID = img.ADVERTISEMENT_ID
+
+    WHERE ADDRESS_CITY LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice'
+    OR ADDRESS_STATE LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice'
+    OR ADDRESS_POSTCODE LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice'
+    OR ADDRESS_STREET LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice'";
   } else {
-    $sql = "SELECT ADDRESS_CITY, ADDRESS_STREET, PROPERTY_TYPE_NAME, ADVERTISEMENT_PRICE, NUMBER_OF_BEDROOMS, NUMBER_OF_BATHROOMS, SQR_FEET, ADDRESS_NUMBER, ADDRESS_STREET, ADDRESS_CITY, ADDRESS_STATE
+    $sql = "SELECT IMAGE_BINARY, ADDRESS_POSTCODE, ADDRESS_CITY, ADDRESS_STATE, ADDRESS_STREET, PROPERTY_TYPE_NAME, ADVERTISEMENT_PRICE, NUMBER_OF_BEDROOMS, NUMBER_OF_BATHROOMS, SQR_FEET, ADDRESS_NUMBER, ADDRESS_STREET, ADDRESS_CITY, ADDRESS_STATE
     FROM [ADVERTISEMENT].[ADVERTISEMENT] AS adv
     INNER JOIN [ADVERTISEMENT].[PROPERTY_TYPE] AS prop ON adv.PROPERTY_TYPE_ID = prop.PROPERTY_TYPE_ID
-    WHERE ADDRESS_CITY LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice' AND PROPERTY_TYPE_NAME = '$propertyType'";
+
+    ---PROPERTY IMAGE
+    INNER JOIN [ADVERTISEMENT].[ADVERTISEMENT_IMAGE] AS img ON adv.ADVERTISEMENT_ID = img.ADVERTISEMENT_ID
+
+    WHERE ADDRESS_CITY LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice' AND PROPERTY_TYPE_NAME = '$propertyType'
+    OR ADDRESS_STATE LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice' AND PROPERTY_TYPE_NAME = '$propertyType'
+    OR ADDRESS_POSTCODE LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice' AND PROPERTY_TYPE_NAME = '$propertyType'
+    OR ADDRESS_STREET LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice' AND PROPERTY_TYPE_NAME = '$propertyType'";
   }
 
   $stmt = sqlsrv_prepare($conn, $sql);
@@ -52,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (sqlsrv_execute($stmt) === false) {
     echo "</br> error";
   } else {
-    echo "</br> success </br>";
+    //echo "</br> success </br>";
 
     $count = 0; ?>
 
@@ -68,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <div class="m-2 p-3 border rounded w-75">
             <div class="row text-center align-items-center justify-content-center">
               <div class="col-12 col-md-8 col-lg-4 p-3">
-                <img src="/images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" class="img-fluid rounded">
+                <img src="data:image;base64,<?=base64_encode($row['IMAGE_BINARY']) ?>" class="img-fluid rounded">
               </div>
               <div class="col-12 col-md-8 col-lg-4 text-start col p-3">
                 <h1><?= $row['ADVERTISEMENT_PRICE'] . ' pcm'; ?></h1>
