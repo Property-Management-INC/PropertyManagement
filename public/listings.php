@@ -32,15 +32,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // apply radius filter using Google Maps API
   // LIMIT
+  // add zip code/region
 
   // Apply all or specific filter to property type
   if ($propertyType == "all") {
-    $sql = "SELECT ADDRESS_CITY, ADDRESS_STREET, PROPERTY_TYPE_NAME
+    $sql = "SELECT ADDRESS_CITY, ADDRESS_STREET, PROPERTY_TYPE_NAME, ADVERTISEMENT_PRICE, NUMBER_OF_BEDROOMS, NUMBER_OF_BATHROOMS, SQR_FEET, ADDRESS_NUMBER, ADDRESS_STREET, ADDRESS_CITY, ADDRESS_STATE
     FROM [ADVERTISEMENT].[ADVERTISEMENT] AS adv
     INNER JOIN [ADVERTISEMENT].[PROPERTY_TYPE] AS prop ON adv.PROPERTY_TYPE_ID = prop.PROPERTY_TYPE_ID
     WHERE ADDRESS_CITY LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice'";
   } else {
-    $sql = "SELECT ADDRESS_CITY, ADDRESS_STREET, PROPERTY_TYPE_NAME
+    $sql = "SELECT ADDRESS_CITY, ADDRESS_STREET, PROPERTY_TYPE_NAME, ADVERTISEMENT_PRICE, NUMBER_OF_BEDROOMS, NUMBER_OF_BATHROOMS, SQR_FEET, ADDRESS_NUMBER, ADDRESS_STREET, ADDRESS_CITY, ADDRESS_STATE
     FROM [ADVERTISEMENT].[ADVERTISEMENT] AS adv
     INNER JOIN [ADVERTISEMENT].[PROPERTY_TYPE] AS prop ON adv.PROPERTY_TYPE_ID = prop.PROPERTY_TYPE_ID
     WHERE ADDRESS_CITY LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice' AND PROPERTY_TYPE_NAME = '$propertyType'";
@@ -53,15 +54,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     echo "</br> success </br>";
 
-    $count = 0;
+    $count = 0; ?>
 
-    // Return results
-    while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-      echo $row['ADDRESS_CITY'] . ' ' . $row['ADDRESS_STREET'] . '</br>';
-      $count += 1;
+    <div class="container p-5">
 
-    }
+      <?php
+      // Return results
+      while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+        //echo $row['ADDRESS_CITY'] . ' ' . $row['ADDRESS_STREET'] . '</br>';
+        $count += 1; ?>
 
+        <div class="d-flex align-items-center justify-content-center">
+          <div class="m-2 p-3 border rounded w-75">
+            <div class="row text-center align-items-center justify-content-center">
+              <div class="col-12 col-md-8 col-lg-4 p-3">
+                <img src="/images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" class="img-fluid rounded">
+              </div>
+              <div class="col-12 col-md-8 col-lg-4 text-start col p-3">
+                <h1><?= $row['ADVERTISEMENT_PRICE'] . ' pcm'; ?></h1>
+                <p><?= $row['NUMBER_OF_BEDROOMS'] . ' Beds | ' . $row['NUMBER_OF_BATHROOMS'] . ' Bath | ' . $row['SQR_FEET'] . ' sqft'; ?></p>
+                <p><?= $row['ADDRESS_NUMBER'] . ' ' . $row['ADDRESS_STREET'] . ', ' . $row['ADDRESS_CITY'] . ', ' . $row['ADDRESS_STATE']; ?></p>
+              </div>
+              <div class="col-12 col-md-8 col-lg-4 p-3">
+                <a href="propertyInfo.php" class="btn btn-dark p-3">More Info</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <?php } ?>
+
+    </div>
+
+    <?php
     // If no result alert user
     if ($row < 1 && $count === 0) {
       echo "No results were found. Please expand your search parameters.";
