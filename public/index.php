@@ -16,7 +16,7 @@ include("includes/nav.php");
   <div id="imgContent">
     <h1 class="fw-bold">Search for Houses</h1>
     <h5 class="p-3">The house you want is out there and we'll help you find it</h5>
-    <form class="bg-black p-2 rounded" method="post" action="listings.php">
+    <form class="bg-black p-2 rounded" method="get" action="listings.php">
       <div class="row align-items-center justify-content-center pb-5">
         <div class="col-12 col-md-8 col-lg-6">
           <input class="form-control p-3" list="propertySuggestions" id="propertySearched" name="propertySearched" placeholder="Type to search...">
