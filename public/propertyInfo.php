@@ -105,7 +105,7 @@ if (sqlsrv_execute($stmt) === false) {
             <h5>Bedrooms</h5>
           </div>
           <div class="col-12 col-md-12 col-lg-3 p-2">
-            <h5><?= $row['NUMBER_OF_BEDROOMS']; ?></h5>
+            <h5><?= $row['NUMBER_OF_BATHROOMS']; ?></h5>
             <h5>Total Baths</h5>
           </div>
           <div class="col-12 col-md-12 col-lg-3 p-2">
