@@ -1,5 +1,5 @@
 <?php
-// Lines 0 - 76 written by William Hilton
+// Lines 0 - 249 written by William Hilton
 // The listings page displays a condensed view of properties that are available to rent or buy.
 
 session_start();
@@ -18,23 +18,21 @@ session_start();
 include("includes/connect.php");
 
 // Get data
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['propertySearched'])) {
   // Get user input
-  $propertySearched = $_POST['propertySearched'];
+  $propertySearched = $_GET['propertySearched'];
 
-  // Filters
-  $radius = $_POST['radius'];
-  $bedrooms = $_POST['bedrooms'];
-  $maxPrice = $_POST['maxPrice'];
-  $propertyType = $_POST['propertyType'];
-
-  //echo "User input: " . $propertySearched;
+  // Filters // get instead of post
+  $radius = $_GET['radius'];
+  $bedrooms = $_GET['bedrooms'];
+  $maxPrice = $_GET['maxPrice'];
+  $propertyType = $_GET['propertyType'];
 
   // apply radius filter using Google Maps API
   // LIMIT
 
   // Apply all or specific filter to property type
-  if ($propertyType == "all") {
+  if ($propertyType === "all") {
     $sql = "SELECT adv.ADVERTISEMENT_ID, IMAGE_BINARY, ADDRESS_POSTCODE, ADDRESS_CITY, ADDRESS_STATE, ADDRESS_STREET, PROPERTY_TYPE_NAME, ADVERTISEMENT_PRICE, NUMBER_OF_BEDROOMS, NUMBER_OF_BATHROOMS, SQR_FEET, ADDRESS_NUMBER, ADDRESS_STREET, ADDRESS_CITY, ADDRESS_STATE
     FROM [ADVERTISEMENT].[ADVERTISEMENT] AS adv
     INNER JOIN [ADVERTISEMENT].[PROPERTY_TYPE] AS prop ON adv.PROPERTY_TYPE_ID = prop.PROPERTY_TYPE_ID
@@ -47,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     OR ADDRESS_POSTCODE LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice'
     OR ADDRESS_STREET LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice'";
   } else {
-    $sql = "SELECT ADVERTISEMENT_ID, IMAGE_BINARY, ADDRESS_POSTCODE, ADDRESS_CITY, ADDRESS_STATE, ADDRESS_STREET, PROPERTY_TYPE_NAME, ADVERTISEMENT_PRICE, NUMBER_OF_BEDROOMS, NUMBER_OF_BATHROOMS, SQR_FEET, ADDRESS_NUMBER, ADDRESS_STREET, ADDRESS_CITY, ADDRESS_STATE
+    $sql = "SELECT adv.ADVERTISEMENT_ID, IMAGE_BINARY, ADDRESS_POSTCODE, ADDRESS_CITY, ADDRESS_STATE, ADDRESS_STREET, PROPERTY_TYPE_NAME, ADVERTISEMENT_PRICE, NUMBER_OF_BEDROOMS, NUMBER_OF_BATHROOMS, SQR_FEET, ADDRESS_NUMBER, ADDRESS_STREET, ADDRESS_CITY, ADDRESS_STATE
     FROM [ADVERTISEMENT].[ADVERTISEMENT] AS adv
     INNER JOIN [ADVERTISEMENT].[PROPERTY_TYPE] AS prop ON adv.PROPERTY_TYPE_ID = prop.PROPERTY_TYPE_ID
 
@@ -61,6 +59,70 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   $stmt = sqlsrv_prepare($conn, $sql);
+?>
+
+<form class="bg-light p-2 m-0 border-bottom border-top" method="get" action="listings.php">
+  <div class="row align-items-center justify-content-center pb-0">
+    <div class="col-12 col-md-8 col-lg-6">
+      <input class="form-control p-2" list="propertySuggestions" id="propertySearched" name="propertySearched" placeholder="Type to search...">
+      <datalist id="propertySuggestions">
+        <option value="San Francisco">
+        <option value="New York">
+        <option value="Seattle">
+        <option value="Los Angeles">
+        <option value="Chicago">
+      </datalist>
+    </div>
+    <div class="col-12 col-md-8 col-lg-1 ps-0 pt-3 pb-3 d-flex align-items-center justify-content-center">
+      <button class="btn btn-outline-light ps-3 pe-3 text-black border border-secondary" type="submit">
+       Search
+      </button>
+    </div>
+  </div>
+  <div class="row text-center align-items-center justify-content-center mb-3">
+    <div class="col-12 col-md-8 col-lg-3 pt-3 pb-3">
+      <label class="form-label" for="radius">Search radius</label>
+      <select class="form-select" id="radius" name="radius">
+        <option value="0" selected>Any radius</option>
+        <option value="5">5 km</option>
+        <option value="10">10 km</option>
+        <option value="25">25 km</option>
+      </select>
+    </div>
+    <div class="col-12 col-md-8 col-lg-3 pt-3 pb-3">
+      <label class="form-label" for="bedrooms">Bedrooms</label>
+      <select class="form-select" id="bedrooms" name="bedrooms">
+        <option value="0" selected>All</option>
+        <option value="1">1+</option>
+        <option value="2">2+</option>
+        <option value="3">3+</option>
+        <option value="4">4+</option>
+        <option value="5">5+</option>
+      </select>
+    </div>
+    <div class="col-12 col-md-8 col-lg-3 pt-3 pb-3">
+      <label class="form-label" for="maxPrice">Max Price</label>
+      <select class="form-select" id="maxPrice" name="maxPrice">
+        <option value="10000000" selected>No max</option>
+        <option value="500">500 pcm</option>
+        <option value="600">600 pcm</option>
+        <option value="700">700 pcm</option>
+      </select>
+    </div>
+    <div class="col-12 col-md-8 col-lg-3 pt-3 pb-3">
+      <label class="form-label" for="propertyType">Property type</label>
+      <select class="form-select" id="propertyType" name="propertyType">
+        <option value="all" selected>All types</option>
+        <option value="Single">Single Family</option>
+        <option value="Apartment">Apartment</option>
+        <option value="Duplex">Duplex</option>
+      </select>
+    </div>
+  </div>
+</form>
+
+
+<?php
 
   if (sqlsrv_execute($stmt) === false) {
     echo "</br> error";
@@ -101,73 +163,86 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <?php
     // If no result alert user
-    if ($row < 1 && $count === 0) {
-      echo "No results were found. Please expand your search parameters.";
-    }
+    if ($row < 1 && $count === 0) { ?>
+      <div class="d-flex flex-column text-center">
+        <p class="text-danger"><?= "No results were found. Please expand your search parameters."; ?></p>
+      </div>
+
+    <?php }
 
   }
 
   
+//Runs when user clicks link in nav
+} else { 
 
-}
+  ?>
+  <form class="bg-light p-2 m-0 border-bottom border-top" method="get" action="listings.php">
+  <div class="row align-items-center justify-content-center pb-0">
+    <div class="col-12 col-md-8 col-lg-6">
+      <input class="form-control p-2" list="propertySuggestions" id="propertySearched" name="propertySearched" placeholder="Type to search...">
+      <datalist id="propertySuggestions">
+        <option value="San Francisco">
+        <option value="New York">
+        <option value="Seattle">
+        <option value="Los Angeles">
+        <option value="Chicago">
+      </datalist>
+    </div>
+    <div class="col-12 col-md-8 col-lg-1 ps-0 pt-3 pb-3 d-flex align-items-center justify-content-center">
+      <button class="btn btn-outline-light ps-3 pe-3 text-black border border-secondary" type="submit">
+       Search
+      </button>
+    </div>
+  </div>
+  <div class="row text-center align-items-center justify-content-center mb-3">
+    <div class="col-12 col-md-8 col-lg-3 pt-3 pb-3">
+      <label class="form-label" for="radius">Search radius</label>
+      <select class="form-select" id="radius" name="radius">
+        <option value="0" selected>Any radius</option>
+        <option value="5">5 km</option>
+        <option value="10">10 km</option>
+        <option value="25">25 km</option>
+      </select>
+    </div>
+    <div class="col-12 col-md-8 col-lg-3 pt-3 pb-3">
+      <label class="form-label" for="bedrooms">Bedrooms</label>
+      <select class="form-select" id="bedrooms" name="bedrooms">
+        <option value="0" selected>All</option>
+        <option value="1">1+</option>
+        <option value="2">2+</option>
+        <option value="3">3+</option>
+        <option value="4">4+</option>
+        <option value="5">5+</option>
+      </select>
+    </div>
+    <div class="col-12 col-md-8 col-lg-3 pt-3 pb-3">
+      <label class="form-label" for="maxPrice">Max Price</label>
+      <select class="form-select" id="maxPrice" name="maxPrice">
+        <option value="10000000" selected>No max</option>
+        <option value="500">500 pcm</option>
+        <option value="600">600 pcm</option>
+        <option value="700">700 pcm</option>
+      </select>
+    </div>
+    <div class="col-12 col-md-8 col-lg-3 pt-3 pb-3">
+      <label class="form-label" for="propertyType">Property type</label>
+      <select class="form-select" id="propertyType" name="propertyType">
+        <option value="all" selected>All types</option>
+        <option value="Single">Single Family</option>
+        <option value="Apartment">Apartment</option>
+        <option value="Duplex">Duplex</option>
+      </select>
+    </div>
+  </div>
+</form>
+<?php }
 
 ?>
 
+<!--return example props-->
 <div class="container p-5">
-  <div class="d-flex align-items-center justify-content-center">
-    <div class="m-2 p-3 border rounded w-75">
-        <div class="row text-center align-items-center justify-content-center">
-          <div class="col-12 col-md-8 col-lg-4 p-3">
-            <img src="/images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" class="img-fluid rounded">
-          </div>
-          <div class="col-12 col-md-8 col-lg-4 text-start col p-3">
-            <h1>390 pcm</h1>
-            <p>House | 4 Beds | 2 Bath | 688 sqft</p>
-            <p>48 Roebuck Road, Crookesmoor, Sheffield</p>
-          </div>
-          <div class="col-12 col-md-8 col-lg-4 p-3">
-            <a href="propertyInfo.php" class="btn btn-dark p-3">More Info</a>
-          </div>
-        </div>
-    </div>
-  </div>
 
-  <div class="d-flex align-items-center justify-content-center">
-    <div class="m-2 p-3 border rounded w-75">
-        <div class="row text-center align-items-center justify-content-center">
-          <div class="col-12 col-md-8 col-lg-4 p-3">
-            <img src="/images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" class="img-fluid rounded">
-          </div>
-          <div class="col-12 col-md-8 col-lg-4 text-start col p-3">
-            <h1>390 pcm</h1>
-            <p>House | 4 Beds | 2 Bath | 688 sqft</p>
-            <p>48 Roebuck Road, Crookesmoor, Sheffield</p>
-          </div>
-          <div class="col-12 col-md-8 col-lg-4 p-3">
-            <a href="propertyInfo.php" class="btn btn-dark p-3">More Info</a>
-          </div>
-        </div>
-    </div>
-  </div>
-
-  <div class="d-flex align-items-center justify-content-center">
-    <div class="m-2 p-3 border rounded w-75">
-        <div class="row text-center align-items-center justify-content-center">
-          <div class="col-12 col-md-8 col-lg-4 p-3">
-            <img src="/images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" class="img-fluid rounded">
-          </div>
-          <div class="col-12 col-md-8 col-lg-4 text-start col p-3">
-            <h1>390 pcm</h1>
-            <p>House | 4 Beds | 2 Bath | 688 sqft</p>
-            <p>48 Roebuck Road, Crookesmoor, Sheffield</p>
-          </div>
-          <div class="col-12 col-md-8 col-lg-4 p-3">
-            <a href="propertyInfo.php" class="btn btn-dark p-3">More Info</a>
-          </div>
-        </div>
-    </div>
-  </div>
 </div>
 
 <?php include("includes/footer.php"); ?>
-
