@@ -2,9 +2,29 @@
 // Lines 0-110 written by William Hilton
 // The admin portal enables the system administrator to view, approve, and reject advertisement requests from sellers.
 
+session_start();
+// User is logged in and user account has admin privileges
+
+//Sql query
+// Need ID of user who is logged in
+// add userID to GET on login
+$sql = "SELECT IS_ADMIN 
+        FROM [USER].[USER]
+        WHERE USER_ID";
+
+//$stmt = sqlsrv_prepare($conn, $sql);
+
+
+if(!isset($_SESSION["login"])) {
+  echo "not logged in";
+  header("location:../login.php");
+}
+
 include("../includes/config.php");
 include("../includes/header.php");
 include("../includes/nav.php");
+
+
 ?>
 
 <div class="mainContent">
@@ -23,12 +43,12 @@ include("../includes/nav.php");
         <h5>Property Images:</h5>
         <img src="../images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
         <img src="../images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
-        <img src="images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
-        <img src="images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
-        <img src="images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
-        <img src="images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
-        <img src="images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
-        <img src="images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
+        <img src="../images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
+        <img src="../images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
+        <img src="../images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
+        <img src="../images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
+        <img src="../images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
+        <img src="../images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
       </div>
     <div class="border p-2 mt-2">
         <h5>Proof of Ownership:</h5>
@@ -69,14 +89,14 @@ include("../includes/nav.php");
     <h5 class="border p-2">Square Feet: 2,500</h5>
     <div class="border p-2">
         <h5>Property Images:</h5>
-        <img src="images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
-        <img src="images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
-        <img src="images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
-        <img src="images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
-        <img src="images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
-        <img src="images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
-        <img src="images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
-        <img src="images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
+        <img src="../images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
+        <img src="../images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
+        <img src="../images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
+        <img src="../images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
+        <img src="../images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
+        <img src="../images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
+        <img src="../images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
+        <img src="../images/artur-tumasjan-p_cHW1REBWc-unsplash.jpg" width="200px">
     </div>
     <div class="border p-2 mt-2">
         <h5>Proof of Ownership:</h5>
