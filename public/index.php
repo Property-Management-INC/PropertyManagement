@@ -11,7 +11,7 @@ include("includes/nav.php");
 //include("includes/connect.php");
 
 ?>
-
+  
 <div id="imgContainer">
   <div id="imgContent">
     <h1 class="fw-bold">Search for Houses</h1>
