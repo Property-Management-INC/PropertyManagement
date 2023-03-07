@@ -16,7 +16,7 @@ include("includes/nav.php");
   <div id="imgContent">
     <h1 class="fw-bold">Search for Houses</h1>
     <h5 class="p-3">The house you want is out there and we'll help you find it</h5>
-    <form class="bg-black p-2 rounded" method="get" action="listings.php">
+    <form class="bg-#1b1b1b p-2 rounded" method="get" action="listings.php">
       <div class="row align-items-center justify-content-center pb-5">
         <div class="col-12 col-md-8 col-lg-6">
           <input class="form-control p-3" list="propertySuggestions" id="propertySearched" name="propertySearched" placeholder="Type to search...">
@@ -90,11 +90,15 @@ include("includes/nav.php");
       <div class="card p-3 m-3">
           <h1>Homeseekers</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime similique itaque ex incidunt? Vel eveniet, qui, ut repellendus aliquid eligendi culpa officiis iste voluptatum, dignissimos consequatur possimus odit iusto exercitationem!</p>
+          <img src="images/homesearch.png" />
+          <a href="listings.php" class="button">View Listings</a>
       </div>
       <div class="card p-3 m-3">
           <h1>Landlords</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime similique itaque ex incidunt? Vel eveniet, qui, ut repellendus aliquid eligendi culpa officiis iste voluptatum, dignissimos consequatur possimus odit iusto exercitationem!</p>
-      </div>
+          <img src="images/landlordnew.png" />
+          <a href="newadvertisement.php" class="button">Submit Listing</a>
+        </div>
   </div>
 </div>
 
