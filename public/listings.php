@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['propertySearched'])) {
   // Get user input
   $propertySearched = $_GET['propertySearched'];
 
-  // Filters // get instead of post
+  // Filters
   $radius = $_GET['radius'];
   $bedrooms = $_GET['bedrooms'];
   $maxPrice = $_GET['maxPrice'];
@@ -35,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['propertySearched'])) {
   if ($propertyType === "all") {
     $sql = "SELECT adv.ADVERTISEMENT_ID, IMAGE_BINARY, ADDRESS_POSTCODE, ADDRESS_CITY, ADDRESS_STATE, ADDRESS_STREET, PROPERTY_TYPE_NAME, ADVERTISEMENT_PRICE, NUMBER_OF_BEDROOMS, NUMBER_OF_BATHROOMS, SQR_FEET, ADDRESS_NUMBER, ADDRESS_STREET, ADDRESS_CITY, ADDRESS_STATE
     FROM [ADVERTISEMENT].[ADVERTISEMENT] AS adv
+
     INNER JOIN [ADVERTISEMENT].[PROPERTY_TYPE] AS prop ON adv.PROPERTY_TYPE_ID = prop.PROPERTY_TYPE_ID
 
     ---PROPERTY IMAGE
@@ -44,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['propertySearched'])) {
     OR ADDRESS_STATE LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice'
     OR ADDRESS_POSTCODE LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice'
     OR ADDRESS_STREET LIKE '%$propertySearched%' AND NUMBER_OF_BEDROOMS >= '$bedrooms' AND ADVERTISEMENT_PRICE <= '$maxPrice'";
+
   } else {
     $sql = "SELECT adv.ADVERTISEMENT_ID, IMAGE_BINARY, ADDRESS_POSTCODE, ADDRESS_CITY, ADDRESS_STATE, ADDRESS_STREET, PROPERTY_TYPE_NAME, ADVERTISEMENT_PRICE, NUMBER_OF_BEDROOMS, NUMBER_OF_BATHROOMS, SQR_FEET, ADDRESS_NUMBER, ADDRESS_STREET, ADDRESS_CITY, ADDRESS_STATE
     FROM [ADVERTISEMENT].[ADVERTISEMENT] AS adv
@@ -59,6 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['propertySearched'])) {
   }
 
   $stmt = sqlsrv_prepare($conn, $sql);
+
 ?>
 
 <form class="bg-light p-2 m-0 border-bottom border-top" method="get" action="listings.php">
@@ -124,59 +127,57 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['propertySearched'])) {
 
 <?php
 
-  if (sqlsrv_execute($stmt) === false) {
-    echo "</br> error";
-  } else {
-    //echo "</br> success </br>";
+if (sqlsrv_execute($stmt) === false) {
+  echo "</br> error";
+} else {
 
-    $count = 0; ?>
+  $count = 0; 
 
-    <div class="container p-5">
+?>
 
-      <?php
-      // Return results
-      while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-        //echo $row['ADDRESS_CITY'] . ' ' . $row['ADDRESS_STREET'] . '</br>';
-        $count += 1; ?>
+<div class="container p-5">
 
-        <div class="d-flex align-items-center justify-content-center">
-          <div class="m-2 p-3 border rounded w-75">
-            <div class="row text-center align-items-center justify-content-center">
-              <div class="col-12 col-md-8 col-lg-4 p-3">
-                <img src="data:image;base64,<?=base64_encode($row['IMAGE_BINARY']) ?>" class="img-fluid rounded">
-              </div>
-              <div class="col-12 col-md-8 col-lg-4 text-start col p-3">
-                <h1><?= $row['ADVERTISEMENT_PRICE'] . ' pcm'; ?></h1>
-                <p><?= $row['NUMBER_OF_BEDROOMS'] . ' Beds | ' . $row['NUMBER_OF_BATHROOMS'] . ' Bath | ' . $row['SQR_FEET'] . ' sqft'; ?></p>
-                <p><?= $row['ADDRESS_NUMBER'] . ' ' . $row['ADDRESS_STREET'] . ', ' . $row['ADDRESS_CITY'] . ', ' . $row['ADDRESS_STATE']; ?></p>
-              </div>
-              <div class="col-12 col-md-8 col-lg-4 p-3">
-                <a class="btn btn-dark p-3" href="propertyInfo.php?id=<?php echo $row['ADVERTISEMENT_ID'];?>">More Info</a>
-              </div>
-            </div>
+  <?php
+  // Return results
+  while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+    //echo $row['ADDRESS_CITY'] . ' ' . $row['ADDRESS_STREET'] . '</br>';
+    $count += 1; ?>
+
+    <div class="d-flex align-items-center justify-content-center">
+      <div class="m-2 p-3 border rounded w-75">
+        <div class="row text-center align-items-center justify-content-center">
+          <div class="col-12 col-md-8 col-lg-4 p-3">
+            <img src="data:image;base64,<?=base64_encode($row['IMAGE_BINARY']) ?>" class="img-fluid rounded">
+          </div>
+          <div class="col-12 col-md-8 col-lg-4 text-start col p-3">
+            <h1><?= $row['ADVERTISEMENT_PRICE'] . ' pcm'; ?></h1>
+            <p><?= $row['NUMBER_OF_BEDROOMS'] . ' Beds | ' . $row['NUMBER_OF_BATHROOMS'] . ' Bath | ' . $row['SQR_FEET'] . ' sqft'; ?></p>
+            <p><?= $row['ADDRESS_NUMBER'] . ' ' . $row['ADDRESS_STREET'] . ', ' . $row['ADDRESS_CITY'] . ', ' . $row['ADDRESS_STATE']; ?></p>
+          </div>
+          <div class="col-12 col-md-8 col-lg-4 p-3">
+            <a class="btn btn-dark p-3" href="propertyInfo.php?id=<?= $row['ADVERTISEMENT_ID'];?>">More Info</a>
           </div>
         </div>
-
-      <?php } ?>
-
+      </div>
     </div>
 
-    <?php
-    // If no result alert user
-    if ($row < 1 && $count === 0) { ?>
-      <div class="d-flex flex-column text-center">
-        <p class="text-danger"><?= "No results were found. Please expand your search parameters."; ?></p>
-      </div>
+  <?php } ?>
 
-    <?php }
+</div>
 
-  }
+<?php
+// If no result alert user
+if ($row < 1 && $count === 0) { ?>
+  <div class="d-flex flex-column text-center">
+    <p class="text-danger"><?= "No results were found. Please expand your search parameters."; ?></p>
+  </div>
 
+<?php }
+
+}
   
 //Runs when user clicks link in nav
-} else { 
-
-  ?>
+} else { ?>
   <form class="bg-light p-2 m-0 border-bottom border-top" method="get" action="listings.php">
   <div class="row align-items-center justify-content-center pb-0">
     <div class="col-12 col-md-8 col-lg-6">
@@ -236,9 +237,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['propertySearched'])) {
     </div>
   </div>
 </form>
-<?php }
-
-?>
+<?php } ?>
 
 <!--return example props-->
 <div class="container p-5">

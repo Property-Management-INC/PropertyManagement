@@ -25,6 +25,10 @@
       <input type="email" class="form-control" id="email" name="email" placeholder="johnDoe@gmail.com">
     </div>
     <div class="mb-3">
+      <label for="postcode" class="form-label">Postcode</label>
+      <input type="postcode" class="form-control" id="postcode" name="postcode" placeholder="XX1X 1XX">
+    </div>
+    <div class="mb-3">
         <a link class="link-primary" href="login.php">Login</a>
     </div>
     <div class="mb-3">
